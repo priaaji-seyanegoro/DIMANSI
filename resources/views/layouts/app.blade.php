@@ -19,6 +19,7 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
+    @yield('css')
     @yield('header')
 </head>
 
@@ -97,8 +98,8 @@
                                 <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-database"></i> <span>Data Konten</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                                 <div id="subPages" class="collapse ">
                                     <ul class="nav">
-                                        <li><a href="/category" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
-                                        <li><a href="#" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
+                                        <li><a href="{{route('category.index')}}" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
+                                        <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -140,6 +141,8 @@
     <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
     <script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+    @yield('js')
     @yield('footer')
 </body>
 

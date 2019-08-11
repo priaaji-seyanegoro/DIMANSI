@@ -36,7 +36,9 @@ Route::group(['middleware'=>'auth','checkRole:admin'],function(){
 
     //categorys
     Route::resource('category','CategoryController');
+
     //konten
+    Route::resource('konten','KontenController');
     
 
 
