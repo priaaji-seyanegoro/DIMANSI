@@ -25,7 +25,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                 <th>Nama Depan</th>
+                                <th>Nama Depan</th>
                                 <th>Nama Belakang</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
@@ -33,24 +33,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                             @foreach($data_siswa as $siswa)
-                        <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_depan}}</a></td>
-                        <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_belakang}}</a></td>
-                        <td>{{$siswa->jenis_kelamin}}</td>
-                        <td>{{$siswa->alamat}}</td>
-                        @if(auth()->user()->role == 'admin')
-                        <td>
-                            <a href="/siswa/{{$siswa->id}}/edit" class ="btn btn-warning btn-sm">Edit</a>
-                            <a href="/siswa/{{$siswa->id}}/delete" class ="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin?')">Delete</a>
-                        </td>
-                        @endif
-                        @if(auth()->user()->role == 'guru')
-                        <td>
-                          <a href="/siswa/{{$siswa->id}}/profile" class ="btn btn-warning btn-sm">Input Nilai</a>
-                        </td>
-                        @endif
-                    </tr>
-                        @endforeach
+                            @foreach($data_siswa as $siswa)
+                                <tr>
+                                  <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_depan}}</a></td>
+                                  <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_belakang}}</a></td>
+                                  <td>{{$siswa->jenis_kelamin}}</td>
+                                  <td>{{$siswa->alamat}}</td>
+                                  @if(auth()->user()->role == 'admin')
+                                    <td>
+                                        <a href="/siswa/{{$siswa->id}}/edit" class ="btn btn-warning btn-sm">Edit</a>
+                                        <a href="/siswa/{{$siswa->id}}/delete" class ="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin?')">Delete</a>
+                                    </td>
+                                  @endif
+                                  @if(auth()->user()->role == 'guru')
+                                    <td>
+                                      <a href="/siswa/{{$siswa->id}}/profile" class ="btn btn-warning btn-sm">Input Nilai</a>
+                                    </td>
+                                  @endif
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

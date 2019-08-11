@@ -87,15 +87,24 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/home" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/home" ><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+
                         @if(auth()->user()->role == 'admin')
                             <li><a href="/siswa" class=""><i class="lnr lnr-user"></i> <span>Data Siswa</span></a></li>
                             <li><a href="/guru" class=""><i class="lnr lnr-user"></i> <span>Data Guru</span></a></li>
-                            <li><a href="panels.html" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li>
-                            <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Konten</span></a></li>
+                            <li><a href="#" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li>
                             <li>
-                            <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-calendar"></i> <span>Jadwal</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-database"></i> <span>Data Konten</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                                 <div id="subPages" class="collapse ">
+                                    <ul class="nav">
+                                        <li><a href="/category" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
+                                        <li><a href="#" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="fa fa-calendar"></i> <span>Jadwal</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <div id="subPages1" class="collapse ">
                                     <ul class="nav">
                                         <li><a href="/jadwal/ujian" class="">Jadwal Ujian</a></li>
                                         <li><a href="/jadwal/pelajaran" class="">Jadwal Pelajaran</a></li>
@@ -121,7 +130,7 @@
         <div class="clearfix"></div>
         <footer>
             <div class="container-fluid">
-                <p class="copyright">&copy; 2019 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+                <p class="copyright">&copy; 2019 <b>Dimansi Team</b> All Rights Reserved.</p>
             </div>
         </footer>
     </div>
