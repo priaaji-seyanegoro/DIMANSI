@@ -15,29 +15,23 @@
       }
 
       .linkJudul{
-        color: white;
+        color: black;
+        font-weight: 800px;
 
       }
 
       a:hover{
-        color: black;
+        color: blueviolet;
         text-decoration: none;
       }
 
       .card{
         max-height: auto;
-        min-height: 300px;
+        min-height: 100px;
         margin-bottom : 20px;
         padding : 20px;
-        object-fit: cover;
-        border-radius: 30px;
-        box-shadow: 0px 5px 20px black;
-        background-color: #00AAFF;
       }
 
-      .img-thumbnail{
-        border-radius: 20%;
-      }
 
       img:hover{
         transform: scale(1.1);
@@ -58,9 +52,16 @@
                                     <img class="img-thumbnail" id="news-images" src="{{asset('images/'.$post->image)}}" alt="sampul berita" style="border:none;">
                                 </a>
                                 <div class="judul">
+                                  <br>
                                     <a href="{{route('konten.show' , $post->slug)}}" class="linkJudul" >
-                                        <h3 class="card-title">{{strtoupper($post->title)}} </h3>
+                                        <b>
+                                          {{strtoupper(str_limit($post->title,40))}}
+                                        </b>  
                                     </a>
+                                </div>
+                                <div>
+                                  <br>
+                                  <span><i class="fa fa-clock-o"></i> {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</span>
                                 </div>
                             </div>
                         </div>

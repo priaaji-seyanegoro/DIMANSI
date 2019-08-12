@@ -169,8 +169,7 @@
         <!-- Footer Location -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Location</h4>
-          <p class="lead mb-0">2215 John Daniel Drive
-            <br>Clark, MO 65243</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.50331238867!2d106.84714451419335!3d-6.197129462435398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec24e3f773c3%3A0x483a1180bc6cf18f!2sUniversitas+Persada+Indonesia+Y.A.I!5e0!3m2!1sid!2sid!4v1565624026788!5m2!1sid!2sid" width="300" height="250" frameborder="0" style="box-shadow: 0px 5px 20px black; border-radius:20px;" allowfullscreen></iframe>
         </div>
 
         <!-- Footer Social Icons -->
