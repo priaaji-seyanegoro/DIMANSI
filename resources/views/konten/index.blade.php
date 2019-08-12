@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 @extends('layouts.app')
+@section('css')
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2
+        }
+    </style>
+@endsection
 
 @section('content')
 <div class="main">
@@ -18,7 +37,7 @@
                             {{session('sukses')}}
                         </div>
                     @endif
-                    <div class="panel-body">
+                    <div class="panel-body" style="overflow-x:auto;">
                         <table class="table table-hover">
                             <thead>
                                 <tr class="info">

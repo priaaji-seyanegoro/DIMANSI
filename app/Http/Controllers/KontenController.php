@@ -73,9 +73,11 @@ class KontenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $konten = Konten::where('slug', '=' , $slug )->first();
+        // dd($konten);
+        return view('konten.show',compact('konten'));
     }
 
     /**
@@ -86,7 +88,10 @@ class KontenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorys = Category::all();
+        $konten = Konten::find($id);
+        
+        return view ('konten.edit',compact('categorys','konten'));
     }
 
     /**
@@ -98,7 +103,29 @@ class KontenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title'     => 'required|min:5',
+            'content'   => 'required'
+        ]);
+
+        $konten = Konten::find($id);
+        $konten->title = $request->title;
+        $konten->slug = str_slug($konten->title);
+        $konten->content = $request->content;
+        $konten->category_id = $request->category;
+
+        if($request->hasFile('image')){
+            File::delete('images/'.$konten->image);
+            $file = $request->file('image');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $destinationPath = public_path('images');
+            $file->move($destinationPath , $fileName);
+            $konten->image = $fileName;
+        }
+
+        $konten->save();
+
+        return redirect()->route('konten.index')->withInfo('Konten Baru Berhasil Ditambah');
     }
 
     /**
