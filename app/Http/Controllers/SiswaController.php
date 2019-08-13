@@ -58,13 +58,13 @@ class SiswaController extends Controller
    		}
    		return redirect('/siswa')->with('sukses','Data Berhasil Diupdate');
    	}
-   		public function delete($id,$user_id){
+   	public function delete($id,$user_id){
    		$siswa = \App\siswa::find($id);
    		$users = \App\user::find($user_id);
    		$siswa-> delete();
    		$users-> delete();
    		return redirect('/siswa')->with('sukses','Data Berhasil dihapus');
-	}
+  	}
 	public function profile($id){
 		$siswa = \App\siswa::find($id);
     $matapel = \App\mapel::all();

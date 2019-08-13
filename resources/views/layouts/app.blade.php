@@ -19,6 +19,7 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
+    @yield('css')
     @yield('header')
 </head>
 
@@ -87,15 +88,24 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/home" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/home" ><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+
                         @if(auth()->user()->role == 'admin')
                             <li><a href="/siswa" class=""><i class="lnr lnr-user"></i> <span>Data Siswa</span></a></li>
                             <li><a href="/guru" class=""><i class="lnr lnr-user"></i> <span>Data Guru</span></a></li>
-                            <li><a href="panels.html" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li>
-                            <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Konten</span></a></li>
+                            <li><a href="#" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li>
                             <li>
-                            <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-calendar"></i> <span>Jadwal</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-database"></i> <span>Data Konten</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                                 <div id="subPages" class="collapse ">
+                                    <ul class="nav">
+                                        <li><a href="{{route('category.index')}}" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
+                                        <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="fa fa-calendar"></i> <span>Jadwal</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <div id="subPages1" class="collapse ">
                                     <ul class="nav">
                                         <li><a href="/jadwal/ujian" class="">Jadwal Ujian</a></li>
                                         <li><a href="/jadwal/pelajaran" class="">Jadwal Pelajaran</a></li>
@@ -121,7 +131,7 @@
         <div class="clearfix"></div>
         <footer>
             <div class="container-fluid">
-                <p class="copyright">&copy; 2019 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+                <p class="copyright">&copy; 2019 <b>Dimansi Team</b> All Rights Reserved.</p>
             </div>
         </footer>
     </div>
@@ -131,6 +141,8 @@
     <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
     <script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+    @yield('js')
     @yield('footer')
 </body>
 
