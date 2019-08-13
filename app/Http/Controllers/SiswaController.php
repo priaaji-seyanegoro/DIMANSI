@@ -64,8 +64,9 @@ class SiswaController extends Controller
 
 		return view('siswa.profile',['siswa' => $siswa, 'matapel'=>$matapel]);
 	}
-  public function myprofile(){
-    return view ('siswa.myprofile');
+  public function myprofile($iduser){
+    $user = \App\User::find($id);
+    return view ('siswa.myprofile',['user'=> $user]);
   }
   public function addnilai(request $request,$idsiswa){
       $siswa = \App\siswa::find($idsiswa);

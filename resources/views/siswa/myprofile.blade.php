@@ -16,7 +16,7 @@
 				<div class="overlay"></div>
 				<div class="profile-main">
 					<img src="" width="90px" height="90px" class="img-circle" alt="Avatar">
-					<h3 class="name"></h3>
+					<h3 class="name">{{auth()->user()->name}}</h3>
 					<span class="online-status status-available">Available</span>
 				</div>
 				<div class="profile-stat">
