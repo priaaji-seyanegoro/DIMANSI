@@ -39,14 +39,7 @@ class SiswaController extends Controller
    	}
    	public function update(Request $request,$id)
     {
-      $this->validate($request,[
-        'nama_depan'=>'required|min:1',
-        'nama_belakang'=>'required',
-        'email'=> 'required|email|unique:users',
-        'jenis_kelamin'=>'required',
-        'alamat'=>'required',
-        'avatar'=>'mimes:jpeg,png',
-      ]);
+      
     	$siswa = \App\siswa::find($id);
    		$siswa->update($request->all());
    		$siswa = \App\siswa::find($id);

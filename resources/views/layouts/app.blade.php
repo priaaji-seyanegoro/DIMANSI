@@ -143,7 +143,7 @@
     <script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
     <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
     @yield('js')
-    @yield('footer')
+    @yield('footer')        
 </body>
 
 </html>
