@@ -15,17 +15,20 @@
 			<div class="profile-header">
 				<div class="overlay"></div>
 				<div class="profile-main">
-					<img src="{{auth()->user()->siswa->getAvatar()}}" width="90px" height="90px" class="img-circle" alt="">
-					<h3 class="name">{{strtoupper(auth()->user()->siswa->nama_depan)}}</h3>
-					<span>{{auth()->user()->email}}</span>
+					<img src="{{auth()->user()->guru->getAvatar()}}" width="90px" height="90px" class="img-circle" alt="Avatar">
+					<h3 class="name">{{strtoupper(auth()->user()->name)}}</h3>
+					<span class=" ">{{auth()->user()->email}}</span>
 				</div>
 				<div class="profile-stat">
 					<div class="row">
-						<div class="col-md-6 stat-item">
-							{{auth()->user()->siswa->mapel->count()}}<span>Mata Pelajaran</span>
+						<div class="col-md-4 stat-item">
+							<span><br><br></span>
 						</div>
-						<div class="col-md-6 stat-item">
-							{{auth()->user()->siswa->mapel->count()}}<span>Kelas</span>
+						<div class="col-md-4 stat-item">
+							 <span><br></span>
+						</div>
+						<div class="col-md-4 stat-item">
+							<span><br></span>
 						</div>
 					</div>
 				</div>
@@ -37,13 +40,13 @@
 				<div class="profile-info">
 					<h4 class="heading">Data Diri</h4>
 					<ul class="list-unstyled list-justify">
-						<li>Jenis Kelamin<span>{{auth()->user()->siswa->jenis_kelamin}}</span></li>
-						<li>No Handphone<span>{{auth()->user()->siswa->nomer}}</span></li>
-						<li>Alamat<span>{{auth()->user()->siswa->alamat}}</span></li>
+						<li>Jenis Kelamin<span>{{auth()->user()->guru->jenis_kelamin}}</span></li>
+						<li>No Handphone<span>(124) 823409234</span></li>
+						<li>Alamat<span>{{auth()->user()->guru->alamat}}</span></li>
 						<li>Tanggal Lahir <span></a></span></li>
 					</ul>
 				</div>
-				<div class="text-center"><a href="/editsiswa/{{auth()->user()->siswa->id}}" class="btn btn-warning">Edit Profile</a></div>
+				<div class="text-center"><a href="/guru/{{auth()->user()->guru->id}}" class="btn btn-warning">Edit Profile</a></div>
 			</div>
 			<!-- END PROFILE DETAIL -->
 		</div>
@@ -71,18 +74,17 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Kode</th>
+								<th>Nama Siswa</th>
 								<th>Nama Pelajaran</th>
 								<th>Nilai</th>
 						</thead>
 						<tbody>
-							@foreach(auth()->user()->siswa->mapel as $mapel)
+							
 							<tr>
-								<td>{{$mapel->kode}}</td>
-								<td>{{$mapel->nama}}</td>
-								<td>{{$mapel->pivot->nilai}}</td>
+								<td><<td>
+								<td></td>
+								<td></td>
 							</tr>
-							@endforeach
 							
 						</tbody>
 					</table>

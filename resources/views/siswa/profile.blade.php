@@ -31,18 +31,15 @@
 				<div class="profile-main">
 					<img src="{{$siswa->getAvatar()}}" width="90px" height="90px" class="img-circle" alt="Avatar">
 					<h3 class="name">{{$siswa->nama_depan}}</h3>
-					<span class="online-status status-available">Available</span>
+					
 				</div>
 				<div class="profile-stat">
 					<div class="row">
-						<div class="col-md-4 stat-item">
+						<div class="col-md-6 stat-item">
 							{{$siswa->mapel->count()}}<span>Mata Pelajaran</span>
 						</div>
-						<div class="col-md-4 stat-item">
-							15 <span>Nilai</span>
-						</div>
-						<div class="col-md-4 stat-item">
-							2174 <span>Kelas</span>
+						<div class="col-md-6 stat-item">
+							{{$siswa->mapel->count()}}<span>Kelas</span>
 						</div>
 					</div>
 				</div>
@@ -55,7 +52,7 @@
 					<h4 class="heading">Data Diri</h4>
 					<ul class="list-unstyled list-justify">
 						<li>Jenis Kelamin<span>{{$siswa->jenis_kelamin}}</span></li>
-						<li>No Handphone<span>(124) 823409234</span></li>
+						<li>No Handphone<span>{{$siswa->nomer}}</span></li>
 						<li>Alamat<span>{{$siswa->alamat}}</span></li>
 						<li>Tanggal Lahir <span></a></span></li>
 					</ul>

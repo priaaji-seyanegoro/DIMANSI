@@ -44,7 +44,7 @@
                         <td>{{$guru->alamat}}</td>
                         <td>
                             <a href="/guru/{{$guru->id}}/edit" class ="btn btn-warning btn-sm">Edit</a>
-                            <a href="/guru/{{$guru->id}}/delete" class ="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin?')">Delete</a>
+                            <a href="/guru/{{$guru->id}}/delete" class ="btn btn-danger btn-sm " onclick ="return confirm('Yakin data ini mau dihapus ?')">Delete</a>
                         </td>
                     </tr>
                         @endforeach
@@ -114,5 +114,26 @@
 
 
 </div>
+@endsection
+@section('footer')
+<script type="text/javascript">
+  $('.deletegu').click(function(){
+    var guru_id = $(this).attr('guru-id');
+    swal({
+          title: "Kamu yakin?",
+          text: "Akan menghapus guru dengan id "+guru_id+" ??",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          console.log(willDelete);
+          if (willDelete) {            
+              window.location()="/siswa/"+siswa_id+"/delete";
+           
+          } 
+        });
+  });
+</script>
 @endsection
 

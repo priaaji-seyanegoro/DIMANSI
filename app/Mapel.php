@@ -13,5 +13,8 @@ class Mapel extends Model
 	{
 	return $this ->belongsToMany(Siswa::class);
 	}
+	public function user(){
+		return $this ->belongsToMany(User::class);
+	}
 
 }

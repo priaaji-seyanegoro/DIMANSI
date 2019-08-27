@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\siswa;
+use App\User;  
 
 class SiswaController extends Controller
 {
@@ -18,6 +20,7 @@ class SiswaController extends Controller
         'nama_depan'=>'required|min:1',
         'email'=> 'required|email|unique:users',
         'jenis_kelamin'=>'required',
+        'nomer'=>'required|numeric|min:12|max:12',
         'alamat'=>'required',
 
       ]);
@@ -31,18 +34,16 @@ class SiswaController extends Controller
 
       	$request->request->add(['user_id'=> $user->id ]);
     	$siswa = \App\siswa::create($request->all());
+      $siswa->avatar = 'images/default.png';
     	return redirect('/siswa')-> with('sukses','Data Berhasil Diinput');
    	}
-   	public function edit($id){
-   		$siswa = \App\siswa::find($id);
+   	public function edit(Siswa $siswa){
+   		
    		return view('siswa.edit',['siswa' => $siswa ]);
    	}
-   	public function update(Request $request,$id)
+   	public function update(Request $request,Siswa $siswa)
     {
       
-    	$siswa = \App\siswa::find($id);
-   		$siswa->update($request->all());
-   		$siswa = \App\siswa::find($id);
    		$siswa->update($request->all());
    		if ($request->hasFile('avatar')){
    			$request->file('avatar')->move('images/',$request->file('avatar')->getClientOriginalName());
@@ -51,23 +52,15 @@ class SiswaController extends Controller
    		}
    		return redirect('/siswa')->with('sukses','Data Berhasil Diupdate');
    	}
-   	public function delete($id,$user_id){
-   		$siswa = \App\siswa::find($id);
-   		$users = \App\user::find($user_id);
-   		$siswa-> delete();
-   		$users-> delete();
+   	public function delete(Siswa $siswa){
+   		$siswa-> delete($siswa);
    		return redirect('/siswa')->with('sukses','Data Berhasil dihapus');
   	}
-	public function profile($id){
-		$siswa = \App\siswa::find($id);
+	public function profile(Siswa $siswa){
     $matapel = \App\mapel::all();
 
 		return view('siswa.profile',['siswa' => $siswa, 'matapel'=>$matapel]);
 	}
-  public function myprofile($iduser){
-    $user = \App\User::find($id);
-    return view ('siswa.myprofile',['user'=> $user]);
-  }
   public function addnilai(request $request,$idsiswa){
       $siswa = \App\siswa::find($idsiswa);
       if($siswa->mapel()->where('mapel_id',$request->mapel)->exists()){
@@ -77,13 +70,16 @@ class SiswaController extends Controller
 
       return redirect('siswa/'.$idsiswa.'/profile')->with('sukses','Data nilai berhasil di input');
   }
-  public function editnilai(request $request,$id){
-    $siswa = \App\siswa::find($id);
+  public function editnilai(request $request,Siswa $siswa){
     $siswa->mapel()->updateExistingPivot($request->pk,['nilai'=>$request->value]);
   }
   public function deletenilai($idsiswa,$idmapel){
     $siswa = \App\siswa::find($idsiswa);
     $siswa->mapel()->detach($idmapel);
     return redirect()->back()->with('sukses','Data Berhasil Dihapus');
+  }
+  public function nilaisiswa(Siswa $siswa){
+     $matapel = \App\mapel::all();
+    return view('siswa.nilai',['siswa'=> $siswa, 'matapel'=>$matapel]);
   }
 }

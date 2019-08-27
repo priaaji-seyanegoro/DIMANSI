@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role'
+        'name', 'email', 'password','role',
     ];
 
     /**
@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+     public function siswa(){
+        return $this->hasOne(Siswa::class);
+                                        // yg mau diambil , yg mau make
+    }
+       public function guru(){
+        return $this->hasOne(Guru::class);
+                                        // yg mau diambil , yg mau make
+      }
+    public function mapel(){
+        return $this ->belongsToMany(Mapel::class)->withPivot(['nilai'])->withTimeStamps();
+    }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Guru;
+use App\User;
 
 class GuruController extends Controller
 {
@@ -26,13 +28,11 @@ class GuruController extends Controller
     	$siswa = \App\guru::create($request->all());
     	return redirect('/guru')-> with('sukses','Data Berhasil Diinput');
    	}
-   	public function edit($id){
-   		$guru = \App\guru::find($id);
+   	public function edit(Guru $guru){
    		return view('guru.edit',['guru' => $guru ]);
    	}
-   	public function update(Request $request,$id)
+   	public function update(Request $request,Guru $guru)
     {
-    	$guru = \App\guru::find($id);
    		$guru->update($request->all());
    		$guru = \App\guru::find($id);
    		$guru->update($request->all());
@@ -40,8 +40,7 @@ class GuruController extends Controller
    		
    		return redirect('/guru')->with('sukses','Data Berhasil Diupdate');
    	}
-   	public function delete($id){
-   		$guru = \App\guru::find($id);
+   	public function delete(Guru $guru){
    		$guru-> delete();
    		return redirect('/guru')->with('sukses','Data Berhasil dihapus');
 	}

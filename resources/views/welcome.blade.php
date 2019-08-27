@@ -17,6 +17,7 @@
 
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/logo.png')}}">
 
 </head>
 
@@ -37,6 +38,9 @@
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
+          </li>
+           <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="">Daftar</a>
           </li>
          
         </ul>
@@ -64,7 +68,7 @@
       </div>
 
       <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">Aplikasi Web Belajar Online Untuk Anak-anak</p>
+      <p class="masthead-subheading font-weight-light mb-0">Website Belajar Online Untuk Anak-anak</p>
 
     </div>
   </header>
@@ -96,7 +100,7 @@
                 <i>Murid</i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
+            <img class="img-fluid" src="img/portfolio/anak.jpg" alt="">
           </div>
         </div>
 
@@ -108,7 +112,7 @@
                 <i>Guru</i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/cake.png" alt="">
+            <img class="img-fluid" src="img/portfolio/guru.jpg" alt="">
           </div>
         </div>
 
@@ -120,7 +124,7 @@
                 <i>Orang Tua</i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/circus.png" alt="">
+            <img class="img-fluid" src="img/portfolio/orangtua.jpg" alt="">
           </div>
         </div>
 
@@ -148,9 +152,9 @@
       <!-- About Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">DIMANSI merupakan singkatan dari Dunia Imajinasi Anak Masa Kini. Sehingga, diharapkan para siswa bisa belajar sambil berimajinasi</div>
+          <p class="lead">DIMANSI merupakan singkatan dari Dunia Imajinasi Anak Masa Kini, kami adalah website pembelajaran bagi anak - anak agar dapat mengembangkan pengetahuan berfikir dan imajinasi anak</div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+          <p class="lead">Dengan metode pembelajaran yang menarik dan menyenangkan bagi anak Dimansi hadir untuk terus mengembangkan potensi dalam diri anak agar bisa diaplikasikan di lingkungan terutama keluarga </p>
         </div>
       </div>
 

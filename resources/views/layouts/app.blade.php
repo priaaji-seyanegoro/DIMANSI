@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/logo.png')}}">
     @yield('css')
     @yield('header')
 </head>
@@ -29,7 +29,7 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="brand">
-                <a href="/home"><img src="{{asset('assets/img/di.jpg')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
+                <a href="/home"><img src="{{asset('assets/img/baru.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
             </div>
             <div class="container-fluid">
                 <div class="navbar-btn">
@@ -43,41 +43,31 @@
                 </form>
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
+                        
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
-                                <i class="lnr lnr-alarm"></i>
-                                <span class="badge bg-danger">5</span>
-                            </a>
-                            <ul class="dropdown-menu notifications">
-                                <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-                                <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-                                <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-                                <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-                                <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-                                <li><a href="#" class="more">See all notifications</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            @if(auth()->user()->role == 'siswa')
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{auth()->user()->siswa->getAvatar()}}" class="img-circle" alt="Avatar"><span>{{strtoupper(auth()->user()->name)}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            @endif
+                            @if(auth()->user()->role == 'guru')
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{auth()->user()->guru->getAvatar()}} " class="img-circle" alt="Avatar"><span>{{strtoupper(auth()->user()->name)}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            @endif
+                            @if(auth()->user()->role == 'admin')
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{auth()->user()->siswa->getAvatar()}}" class="img-circle" alt="Avatar"><span>{{strtoupper(auth()->user()->name)}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            @endif
                             <ul class="dropdown-menu">
-                                <li><a href="#">Basic Use</a></li>
-                                <li><a href="#">Working With Data</a></li>
-                                <li><a href="#">Security</a></li>
-                                <li><a href="#">Troubleshooting</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/img/User.png')}}" class="img-circle" alt="Avatar"> <span>{{auth()->user()->name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/profile"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-                                <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-                                <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
+                                @if(auth()->user()->role == 'admin')
+                                <li><a href="/profilesiswa"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                                @endif
+                                @if(auth()->user()->role == 'guru')
+                                <li><a href="/myprofile"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                                @endif
+                                @if(auth()->user()->role == 'siswa')
+                                <li><a href="/profilesiswa"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                                @endif
+                                <li><a href="{{Route('change')}}"><i class="lnr lnr-user"></i> <span>Setting</span></a></li>
                                 <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
                             </ul>
                         </li>
-                        <!-- <li>
-                            <a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -142,8 +132,10 @@
     <script src="{{asset('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
     <script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
     <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @yield('js')
     @yield('footer')        
+
 </body>
 
 </html>

@@ -42,7 +42,7 @@
                                   @if(auth()->user()->role == 'admin')
                                     <td>
                                         <a href="/siswa/{{$siswa->id}}/edit" class ="btn btn-warning btn-sm">Edit</a>
-                                        <a href="/siswa/{{$siswa->id}}/delete" class ="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin?')">Delete</a>
+                                        <a href="/siswa/{{$siswa->id}}/delete" class ="btn btn-danger btn-sm" onclick ="return confirm('Yakin data ini mau dihapus ?') " >Delete</a>
                                     </td>
                                   @endif
                                   @if(auth()->user()->role == 'guru')

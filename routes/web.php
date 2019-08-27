@@ -12,34 +12,55 @@
 */
 
 Route::get('/', function () {
+	if(Auth::user()){
+		$users = App\user::all();
+		return view('welcome',compact('users'));
+	}
     return view('welcome');
 });
 Auth::routes();
 //	Controller admin
 Route::group(['middleware'=>'auth','checkRole:admin'],function(){
-//siswa
+
 Route::get('/siswa', 'SiswaController@index');
 Route::post('/siswa/create','SiswaController@create');
-Route::get('/siswa/{id}/edit','SiswaController@edit');
-Route::post('/siswa/{id}/update','SiswaController@update');
-Route::get('/siswa/{id}/delete','SiswaController@delete');
-Route::get('/siswa/{id}/profile','SiswaController@profile');
+Route::get('/siswa/{siswa}/edit','SiswaController@edit');
+Route::post('/siswa/{siswa}/update','SiswaController@update');
+Route::get('/siswa/{siswa}/delete','SiswaController@delete');
+Route::get('/siswa/{siswa}/profile','SiswaController@profile');
 Route::post('/siswa/{id}/addnilai', 'SiswaController@addnilai');
+Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
 Route::get('/siswa/{id}/{idmapel}/deletenilai','SiswaController@deletenilai');
-//guru
+
 Route::get('/guru','GuruController@index');
 Route::post('/guru/create','GuruController@create');
-Route::get('/guru/{id}/edit','GuruController@edit');
-Route::post('/guru/{id}/update','GuruController@update');
-Route::get('/guru/{id}/delete','GuruController@delete');
+Route::get('/guru/{guru}/edit','GuruController@edit');
+Route::post('/guru/{guru}/update','GuruController@update');
+Route::get('/guru/{guru}/delete','GuruController@delete');
 });
+    //categorys
+Route::resource('category','CategoryController');
+    //konten
+Route::resource('konten','KontenController');
+
 //Controller admin,siswa,guru
 Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru'],function(){
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/siswa', 'SiswaController@index');
+//siswa
+Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
+Route::get('/profilesiswa', 'ProfileController@profilesiswa');
+Route::get('/editsiswa/{siswa}','ProfileController@editsiswa');
+Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
+//guru
+Route::get('/myprofile', 'ProfileController@profileguru');
+Route::get('/guru/{guru}','ProfileController@editguru');
+Route::post('/updateguru/{guru}','ProfileController@updateguru');
+
+//paswword
+Route::get('/changePassword','AuthController@change')->name('change');
+Route::post('/changePassword','AuthController@changePassword')->name('changePassword');
+
 });
-//	Controller Siswa
-Route::get('profile','SiswaController@myprofile');
 
 
 Route::get('/logout','AuthController@logout');
