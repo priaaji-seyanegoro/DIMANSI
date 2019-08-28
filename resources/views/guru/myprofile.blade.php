@@ -41,7 +41,7 @@
 					<h4 class="heading">Data Diri</h4>
 					<ul class="list-unstyled list-justify">
 						<li>Jenis Kelamin<span>{{auth()->user()->guru->jenis_kelamin}}</span></li>
-						<li>No Handphone<span>(124) 823409234</span></li>
+						<li>No Handphone<span>{{auth()->user()->guru->nomer}}</span></li>
 						<li>Alamat<span>{{auth()->user()->guru->alamat}}</span></li>
 						<li>Tanggal Lahir <span></a></span></li>
 					</ul>

@@ -48,6 +48,7 @@
                                     </div>
                                 </div>
 
+
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlTextarea1" value="{{$guru->Alamat}}">Alamat</label>
                                     <textarea name ="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3"> {{$guru->alamat}}</textarea>

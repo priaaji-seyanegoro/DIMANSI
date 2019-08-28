@@ -25,8 +25,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Nama Depan</th>
-                                <th>Nama Belakang</th>
+                                <th>Nama</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
                                 <th>Aksi</th>
@@ -35,8 +34,12 @@
                         <tbody>
                             @foreach($data_siswa as $siswa)
                                 <tr>
-                                  <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_depan}}</a></td>
-                                  <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_belakang}}</a></td>
+                                   @if(auth()->user()->role == 'admin')
+                                  <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama_lengkap()}}</a></td>
+                                  @endif
+                                  @if(auth()->user()->role == 'guru')
+                                  <td>{{$siswa->nama_lengkap()}}</td>
+                                  @endif
                                   <td>{{$siswa->jenis_kelamin}}</td>
                                   <td>{{$siswa->alamat}}</td>
                                   @if(auth()->user()->role == 'admin')
@@ -103,6 +106,13 @@
           <span class="help-block">{{$errors->first('jenis_kelamin')}}</span>
         @endif
         </div>
+        <div class="form-group {{$errors->has('nomer') ? 'has-error' : ' '}}">
+        <label for="nomer">Nomer Handphone</label>
+        <input name="nomer" type="text" class="form-control" id="nomer" aria-describedby="emailHelp" placeholder="Masukkan Nomer Handphone">
+        @if($errors -> has('nomer'))
+        <span class="help-block">{{$errors->first('nomer')}}</span>
+        @endif
+      </div>
         <div class="form-group {{$errors->has('alamat') ? 'has-error' : ' '}}">
             <label for="exampleFormControlTextarea1">Alamat</label>
             <textarea name="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

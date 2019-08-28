@@ -42,9 +42,13 @@
                                       <label for="inputEmail4">Gelar</label>
                                       <input name ="gelar"type="text" class="form-control" id="gelar" placeholder="gelar" value="{{$guru->gelar}}">
                                     </div>
-                                    <div class="form-group col-md-12>
+                                    <div class="form-group col-md-12">
                                       <label for="inputEmail4">Agama</label>
                                       <input name ="agama" type="text" class="form-control" id="agama" placeholder="agama" value="{{$guru->agama}}">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                      <label for="nomer">Nomer</label>
+                                      <input name ="nomer"type="text" class="form-control" id="gelar" placeholder="gelar" value="{{$guru->nomer}}">
                                     </div>
                                 </div>
 

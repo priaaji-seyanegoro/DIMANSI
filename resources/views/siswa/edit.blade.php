@@ -48,6 +48,11 @@
                                     @endif
                                 </div>
 
+                                 <div class="form-group col-md-12">
+                                      <label for="nomer">Nomer</label>
+                                      <input name ="nomer"type="text" class="form-control" id="gelar" placeholder="gelar" value="{{$siswa->nomer}}">
+                                    </div>
+
                                 <div class="form-group col-md-12 {{$errors->has('alamat') ? 'has-error' : ' '}}">
                                     <label for="exampleFormControlTextarea1" value="{{$siswa->alamat}}">Alamat</label>
                                     <textarea name ="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3"> {{$siswa->alamat}}</textarea>

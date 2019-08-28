@@ -25,10 +25,8 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Nama Depan</th>
-                                <th>Nama Belakang</th>
+                                <th>Nama</th>
                                 <th>Jenis Kelamin</th>
-                                <th>Gelar</th>
                                 <th>Agama</th>
                                 <th>Alamat</th>
                                 <th>Aksi</th>
@@ -36,10 +34,8 @@
                         </thead>
                         <tbody>
                          @foreach($data_guru as $guru)
-                        <td>{{$guru->nama_depan}}</td>
-                        <td>{{$guru->nama_belakang}}</td>
+                        <td>{{$guru->nama_lengkap()}} {{$guru->gelar}}</td>
                         <td>{{$guru->jenis_kelamin}}</td>
-                        <td>{{$guru->gelar}}</td>
                         <td>{{$guru->agama}}</td>
                         <td>{{$guru->alamat}}</td>
                         <td>
@@ -98,10 +94,18 @@
         <label for="exampleInputEmail1">Agama</label>
         <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="agama">
       </div>
+      <div class="form-group {{$errors->has('nomer') ? 'has-error' : ' '}}">
+        <label for="nomer">Nomer Handphone</label>
+        <input name="nomer" type="text" class="form-control" id="nomer" aria-describedby="emailHelp" placeholder="Masukkan Nomer Handphone">
+        @if($errors -> has('nomer'))
+        <span class="help-block">{{$errors->first('nomer')}}</span>
+        @endif
+      </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Alamat</label>
             <textarea name="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
+
         <div class="modal-footer">
              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -21,7 +21,7 @@ class SiswaController extends Controller
         'nama_depan'=>'required|min:1',
         'email'=> 'required|email|unique:users',
         'jenis_kelamin'=>'required',
-        'nomer'=>'required|numeric|min:12|max:12',
+        'nomer'=>'required|numeric|min:8',
         'alamat'=>'required',
 
       ]);

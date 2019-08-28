@@ -34,8 +34,6 @@ class GuruController extends Controller
    	public function update(Request $request,Guru $guru)
     {
    		$guru->update($request->all());
-   		$guru = \App\guru::find($id);
-   		$guru->update($request->all());
    		
    		
    		return redirect('/guru')->with('sukses','Data Berhasil Diupdate');
