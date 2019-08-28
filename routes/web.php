@@ -57,8 +57,8 @@ Route::get('/guru/{guru}','ProfileController@editguru');
 Route::post('/updateguru/{guru}','ProfileController@updateguru');
 
 //paswword
-Route::get('/changePassword','AuthController@change')->name('change');
-Route::post('/changePassword','AuthController@changePassword')->name('changePassword');
+Route::get('/changePassword','Auth\AuthController@change')->name('change');
+Route::post('/changePassword','Auth\AuthController@updatePassword')->name('password.update');
 
 });
 

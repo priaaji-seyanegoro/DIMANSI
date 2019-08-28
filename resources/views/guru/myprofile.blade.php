@@ -16,7 +16,7 @@
 				<div class="overlay"></div>
 				<div class="profile-main">
 					<img src="{{auth()->user()->guru->getAvatar()}}" width="90px" height="90px" class="img-circle" alt="Avatar">
-					<h3 class="name">{{strtoupper(auth()->user()->name)}}</h3>
+					<h3 class="name">{{strtoupper(auth()->user()->guru->nama_lengkap())}}</h3>
 					<span class=" ">{{auth()->user()->email}}</span>
 				</div>
 				<div class="profile-stat">
@@ -75,17 +75,17 @@
 						<thead>
 							<tr>
 								<th>Nama Siswa</th>
-								<th>Nama Pelajaran</th>
-								<th>Nilai</th>
+								<th>Jumlah Pelajaran</th>
+								<th>Total Nilai</th>
 						</thead>
 						<tbody>
-							
+							@foreach($siswa as $s)
 							<tr>
-								<td><<td>
-								<td></td>
-								<td></td>
+								<td>{{$s->nama_lengkap()}}</td>
+								<td>{{$s->mapel->count()}}</td>
+								<td>{{$s->nilai()}}</td>
 							</tr>
-							
+							@endforeach
 						</tbody>
 					</table>
 				</div>

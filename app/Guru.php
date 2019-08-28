@@ -22,5 +22,8 @@ class Guru extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+    public function nama_lengkap(){
+        return $this->nama_depan.' '.$this->nama_belakang;
+    }
 }
 

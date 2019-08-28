@@ -16,6 +16,7 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
+								<th>No</th>
 								<th>Kode</th>
 								<th>Nama Pelajaran</th>
 								<th>Nilai</th>
@@ -23,13 +24,20 @@
 							</tr>
 						</thead>
 						<tbody>
+							@php
+								$no = 1;
+							@endphp
 							@foreach(auth()->user()->siswa->mapel as $mapel)
 							<tr>
+								<td>{{$no}}</td>
 								<td>{{$mapel->kode}}</td>
 								<td>{{$mapel->nama}}</td>
 								<td>{{$mapel->pivot->nilai}}</td>
 								
 							</tr>
+							@php
+								$no++;
+							@endphp
 							@endforeach
 						</tbody>
 					</table>

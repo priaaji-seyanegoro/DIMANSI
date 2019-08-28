@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\siswa;
-use App\User;  
+use App\User; 
+use App\Guru; 
 
 class SiswaController extends Controller
 {
@@ -32,7 +33,7 @@ class SiswaController extends Controller
       	$user->remember_token = str_random(60);
       	$user->save();
 
-      	$request->request->add(['user_id'=> $user->id ]);
+      $request->request->add(['user_id'=> $user->id ]);
     	$siswa = \App\siswa::create($request->all());
       $siswa->avatar = 'images/default.png';
     	return redirect('/siswa')-> with('sukses','Data Berhasil Diinput');

@@ -25,4 +25,14 @@ class Siswa extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+    public function nama_lengkap(){
+        return $this->nama_depan.' '.$this->nama_belakang;
+    }
+     public function nilai(){
+      $total = 0;
+      foreach ($this->mapel as $mapel) {
+        $total = $total + $mapel->pivot->nilai;
+      }
+      return $total;
+    }
 }

@@ -33,8 +33,13 @@ class ProfileController extends Controller
    		}
    		return redirect('/profilesiswa')->with('sukses','Data Berhasil Diupdate');
     }
+    public function totalsiswa(){
+      return Siswa::count();
+    }
      public function profileguru(Guru $guru){
-        return view ('guru.myprofile',['guru'=>$guru]);
+        $siswa = \App\siswa::all();
+         $matapel = \App\mapel::all();
+        return view ('guru.myprofile',['guru'=>$guru, 'siswa'=>$siswa, 'matapel'=> $matapel]);
     }
     public function editguru(Guru $guru){
       return view ('guru.editprofile',['guru'=> $guru]);

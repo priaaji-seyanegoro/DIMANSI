@@ -3,6 +3,27 @@
 <div class="main">
     <div class="main-content">
      <div class="row">
+
+      @if(session('errorMsg'))
+            <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <i class="mdi mdi-check-all"></i>
+              <strong>oh snap!</strong>{{session('errorMsg')}}
+            </div>
+
+      @endif
+       @if(session('succesMsg'))
+            <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <i class="mdi mdi-check-all"></i>
+              <strong>Well Done!</strong>{{session('succesMsg')}}
+            </div>
+
+      @endif
                 <div class = "col-md-12">
                     <div class="panel">
                 <div class="panel-heading">
@@ -10,7 +31,7 @@
             </div>
             <div class="panel-body">
             <div class="col-lg-12">
-              <form method="post" action="{{ route('changePassword') }}" class="form-horizontal">
+              <form method="post" action="{{ route('password.update') }}" class="form-horizontal">
             {{csrf_field()}}
   
             <div class="card ">

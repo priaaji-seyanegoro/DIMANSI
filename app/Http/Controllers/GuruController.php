@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Guru;
 use App\User;
+use App\Siswa;
 
 class GuruController extends Controller
 {
      public function index (request $request){
-
     	$data_guru = \App\guru::all();
     	return view('guru.guru',['data_guru'=>$data_guru]);
     }

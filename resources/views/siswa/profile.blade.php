@@ -30,7 +30,7 @@
 				<div class="overlay"></div>
 				<div class="profile-main">
 					<img src="{{$siswa->getAvatar()}}" width="90px" height="90px" class="img-circle" alt="Avatar">
-					<h3 class="name">{{$siswa->nama_depan}}</h3>
+					<h3 class="name">{{$siswa->nama_lengkap()}}</h3>
 					
 				</div>
 				<div class="profile-stat">
