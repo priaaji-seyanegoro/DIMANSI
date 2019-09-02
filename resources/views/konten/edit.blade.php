@@ -64,6 +64,14 @@
                             <img src="{{asset('images/'.$konten->image)}}" alt="" width="100px" height="auto" style = "margin : 10px 0 10px 0 ">
                             <input type="file" name="image" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label for="link_youtube">Link Iframe Youtube </label>
+                            <input type="text" name="link_youtube" class="form-control" placeholder="Input Link .. "  value="{{ $konten->link_youtube }}) }}">
+                            @if($errors->has('link_youtube'))
+                                <strong class="text-danger"> {{$errors->first('link_youtube')}} </strong>
+                            @endif
+                        </div>
     
     
                         <div class="form-group">

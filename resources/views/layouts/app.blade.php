@@ -35,12 +35,6 @@
                 <div class="navbar-btn">
                     <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
                 </div>
-                <form class="navbar-form navbar-left">
-                    <div class="input-group">
-                        <input type="text" value="" class="form-control" placeholder="Search dashboard...">
-                        <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
-                    </div>
-                </form>
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         
@@ -83,17 +77,19 @@
                         @if(auth()->user()->role == 'admin')
                             <li><a href="/siswa" class=""><i class="lnr lnr-user"></i> <span>Data Siswa</span></a></li>
                             <li><a href="/guru" class=""><i class="lnr lnr-user"></i> <span>Data Guru</span></a></li>
-                            <li><a href="#" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li>
+                           <!--  <li><a href="#" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li> -->
                             <li>
                                 <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-database"></i> <span>Data Konten</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                                 <div id="subPages" class="collapse ">
                                     <ul class="nav">
                                         <li><a href="{{route('category.index')}}" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
                                         <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
+                                        <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Latihan</span></a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li>
+                            <li><a href="#" class=""><i class="fa fa-calendar"></i> <span>Latihan Soal</span></a></li>
+                           <!--  <li>
                                 <a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="fa fa-calendar"></i> <span>Jadwal</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                                 <div id="subPages1" class="collapse ">
                                     <ul class="nav">
@@ -101,13 +97,14 @@
                                         <li><a href="/jadwal/pelajaran" class="">Jadwal Pelajaran</a></li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li> -->
                         @endif
                         @if(auth()->user()->role == 'guru')
                          <li><a href="/siswa" class=""><i class="lnr lnr-user"></i> <span>Data Siswa</span></a></li>
                         @endif
                         @if(auth()->user()->role == 'siswa')
                         <li><a href="/siswa/{id}/nilaisiswa" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li>
+                        <li><a href="#" class=""><i class="fa fa-calendar"></i> <span>Latihan Soal</span></a></li>
                         @endif
                         
                     </ul>

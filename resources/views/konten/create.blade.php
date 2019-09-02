@@ -14,7 +14,7 @@
                 <div class = "col-md-12">
                     <div class="panel">
                 <div class="panel-heading">
-                <h3 class="panel-title">Edit Data Category</h3>
+                <h3 class="panel-title">Edit Data Kontens</h3>
             </div>
             <div class="panel-body">
                 <div class="col-lg-12">
@@ -56,6 +56,14 @@
                             <div class="form-group">
                                 <label for="image">Upload Image : </label>
                                 <input type="file" name="image" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="link_youtube">Link Iframe Youtube </label>
+                                <input type="text" name="link_youtube" class="form-control" placeholder="Input Link .. " value="{{ old('link_youtube') }}">
+                                @if($errors->has('link_youtube'))
+                                    <strong class="text-danger"> {{$errors->first('link_youtube')}} </strong>
+                                @endif
                             </div>
 
                             <div class="form-group">

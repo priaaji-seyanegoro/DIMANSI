@@ -13,35 +13,52 @@
 
 Route::get('/', function () {
 	if(Auth::user()){
-		$users = App\user::all();
-		return view('welcome',compact('users'));
+		$kontens = DB::table('kontens')->paginate(8);
+		return view('home',compact('kontens'));
 	}
     return view('welcome');
 });
+
+Route::get('/cobakonten' , function(){
+	$kontens = App\Konten::where('category_id', '=' , 4 )->get();
+	
+	return view ('cobakonten',compact('kontens'));
+})->name('coba.konten');
+
+Route::get('/cobashow/{slug?}' , function($slug = null){
+	$konten = App\Konten::where('slug', '=' , $slug )->first();
+	// dd($konten);
+	return view('cobashow',compact('konten'));
+	
+})->name('coba.show');
+
 Auth::routes();
 //	Controller admin
 Route::group(['middleware'=>'auth','checkRole:admin'],function(){
+	Route::get('/siswa', 'SiswaController@index');
+	Route::post('/siswa/create','SiswaController@create');
+	Route::get('/siswa/{siswa}/edit','SiswaController@edit');
+	Route::post('/siswa/{siswa}/update','SiswaController@update');
+	Route::get('/siswa/{siswa}/delete','SiswaController@delete');
+	Route::get('/siswa/{siswa}/profile','SiswaController@profile');
+	Route::post('/siswa/{id}/addnilai', 'SiswaController@addnilai');
+	Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
+	Route::get('/siswa/{id}/{idmapel}/deletenilai','SiswaController@deletenilai');
 
-Route::get('/siswa', 'SiswaController@index');
-Route::post('/siswa/create','SiswaController@create');
-Route::get('/siswa/{siswa}/edit','SiswaController@edit');
-Route::post('/siswa/{siswa}/update','SiswaController@update');
-Route::get('/siswa/{siswa}/delete','SiswaController@delete');
-Route::get('/siswa/{siswa}/profile','SiswaController@profile');
-Route::post('/siswa/{id}/addnilai', 'SiswaController@addnilai');
-Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
-Route::get('/siswa/{id}/{idmapel}/deletenilai','SiswaController@deletenilai');
+	Route::get('/guru','GuruController@index');
+	Route::post('/guru/create','GuruController@create');
+	Route::get('/guru/{guru}/edit','GuruController@edit');
+	Route::post('/guru/{guru}/update','GuruController@update');
+	Route::get('/guru/{guru}/delete','GuruController@delete');
 
-Route::get('/guru','GuruController@index');
-Route::post('/guru/create','GuruController@create');
-Route::get('/guru/{guru}/edit','GuruController@edit');
-Route::post('/guru/{guru}/update','GuruController@update');
-Route::get('/guru/{guru}/delete','GuruController@delete');
+	//categorys
+	Route::resource('category','CategoryController');
+
+	//konten
+	Route::resource('konten','KontenController');
+
 });
-    //categorys
-Route::resource('category','CategoryController');
-    //konten
-Route::resource('konten','KontenController');
+
 
 //Controller admin,siswa,guru
 Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru'],function(){

@@ -43,6 +43,10 @@
                         
                         <div class="col-md-12">
                             <br>
+                            <div class="iframe-container">
+                                {!! $konten->link_youtube !!}
+                            </div>
+                            <br>
                             <div class="post-content">
                                 <p>{!! $konten->content !!}</p>
                             </div>
