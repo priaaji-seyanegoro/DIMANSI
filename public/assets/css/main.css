@@ -1019,7 +1019,7 @@ ul.activity-list > li {
     width: 58%;
     height: 100%;
     position: relative;
-    background-image: url("../../assets/img/login-bg.jpg");
+    background-image: url("../../images/gambar.jpg");
     background-repeat: no-repeat;
     background-size: cover; }
     .auth-box .right:before {
@@ -1149,6 +1149,7 @@ ul.activity-list > li {
 .profile-right {
   float: right;
   width: 65%;
+  height: 600px;
   padding: 20px 25px; }
   .profile-right .heading {
     margin-top: 0; }
@@ -1176,8 +1177,8 @@ ul.activity-list > li {
     background-color: rgba(0, 0, 0, 0.2); }
   .profile-header .profile-main {
     position: relative;
-    padding: 20px;
-    background-image: url("../../assets/img/profile-bg.png");
+    padding: 30px;
+    background-image: url("../../images/gambar.jpg");
     background-repeat: no-repeat;
     background-size: cover; }
   .profile-header .name {
@@ -1230,7 +1231,7 @@ ul.activity-list > li {
 
 .profile-info {
   padding: 0 20px;
-  margin: 40px 0; }
+  margin: 30px 0; }
   .profile-info .heading {
     margin: 0 0 10px 0;
     font-weight: 600; }

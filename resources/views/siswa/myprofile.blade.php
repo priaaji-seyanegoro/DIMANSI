@@ -16,8 +16,8 @@
 				<div class="overlay"></div>
 				<div class="profile-main">
 					<img src="{{auth()->user()->siswa->getAvatar()}}" width="90px" height="90px" class="img-circle" alt="">
-					<h3 class="name">{{strtoupper(auth()->user()->siswa->nama_lengkap())}}</h3>
-					<span>{{auth()->user()->email}}</span>
+					<h3 class="name"><b>{{strtoupper(auth()->user()->siswa->nama_lengkap())}}</b></h3>
+					<span><b>{{auth()->user()->email}}</b></span>
 				</div>
 				<div class="profile-stat">
 					<div class="row">
