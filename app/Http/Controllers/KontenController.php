@@ -42,16 +42,18 @@ class KontenController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title'     => 'required|min:5',
-            'content'   => 'required',
-            'category'   => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048'
+            'title'         => 'required|min:5',
+            'content'       => 'required',
+            'link_youtube'  => 'required',
+            'category'      => 'required',
+            'image'         => 'required|image|mimes:jpg,png,jpeg,svg|max:2048'
         ]);
 
         $konten = new Konten;
         $konten->title = $request->title;
         $konten->slug = str_slug($konten->title);
         $konten->content = $request->content;
+        $konten->link_youtube = $request->link_youtube;
         $konten->category_id = $request->category;
 
         if($request->hasFile('image')){
@@ -105,13 +107,15 @@ class KontenController extends Controller
     {
         $this->validate($request,[
             'title'     => 'required|min:5',
-            'content'   => 'required'
+            'content'   => 'required',
+            'link_youtube'  => 'required',
         ]);
 
         $konten = Konten::find($id);
         $konten->title = $request->title;
         $konten->slug = str_slug($konten->title);
         $konten->content = $request->content;
+        $konten->link_youtube = $request->link_youtube;
         $konten->category_id = $request->category;
 
         if($request->hasFile('image')){

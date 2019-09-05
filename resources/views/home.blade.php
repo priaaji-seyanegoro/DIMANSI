@@ -43,6 +43,15 @@
     <div class="main">
         <div class="main-content">
             <div class="row">
+              <div class="col-md-3">
+                  <div class="metric">
+                    <span class="icon"><i class="fa fa-eye"></i></span>
+                    <p>
+                      <span class="number">{{$siswa->count()}}</span>
+                      <span class="title">Jumlah Siswa</span>
+                    </p>
+                  </div>
+                </div>
                 <div class="col-md-12">
                     <div class="row my-4 justify-content-center">
                         @foreach($kontens as $post)

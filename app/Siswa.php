@@ -30,9 +30,14 @@ class Siswa extends Model
     }
      public function nilai(){
       $total = 0;
+      $hitung = 0;
       foreach ($this->mapel as $mapel) {
-        $total = $total + $mapel->pivot->nilai;
+        $total += $mapel->pivot->nilai;
+        $hitung ++;
       }
-      return $total;
+      return round($total/$hitung);
+    }
+    public function total(){
+        return Siswa::count();
     }
 }

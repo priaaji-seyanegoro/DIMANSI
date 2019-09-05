@@ -23,6 +23,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            justify-content: "center";
         }
     </style>
 @endsection
@@ -42,6 +43,10 @@
     
                         
                         <div class="col-md-12">
+                            <br>
+                            <div class="iframe-container">
+                                {!! $konten->link_youtube !!}
+                            </div>
                             <br>
                             <div class="post-content">
                                 <p>{!! $konten->content !!}</p>

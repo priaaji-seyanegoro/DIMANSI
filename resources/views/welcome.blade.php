@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/logo.png')}}">
@@ -37,6 +38,9 @@
           @auth
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/home">Home</a>
+
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#masuk">Masuk</a>
+
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
@@ -49,7 +53,7 @@
             <a class="nav-link py-3 px-0 px-lg-3" href="">Daftar</a>
           </li>
            <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Masuk</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#masuk">Masuk</a>
           </li>
            @endauth
            @endif
@@ -111,7 +115,7 @@
   </header>
 
   <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="portfolio">
+  <section class="page-section portfolio" id="masuk">
     <div class="container">
 
       <!-- Portfolio Section Heading -->
@@ -198,9 +202,9 @@
 
        <!-- About Section Button -->
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="">
-          <i class="fas fa-download mr-2"></i>
-          Ayo Lihat!
+        <a class="btn btn-xl btn-outline-light" href="{{route('coba.konten')}}">
+          <i class="fas fa-video mr-2"></i>
+          Ayo Coba Lihat!
         </a>
       </div>
 
@@ -225,27 +229,27 @@
         <!-- Footer Social Icons -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Around the Web</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-facebook-f"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
-            <i class="fab fa-fw fa-dribbble"></i>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/dimansi_id/" target="_blank">
+            <i class="fab fa-fw fa-instagram"></i>
           </a>
         </div>
 
         <!-- Footer About Text -->
         <div class="col-lg-4">
-          <h4 class="text-uppercase mb-4">About Freelancer</h4>
-          <p class="lead mb-0">Freelance is a free to use, MIT licensed Bootstrap theme created by
-            <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-        </div>
+          <h4 class="text-uppercase mb-4">About Founder</h4>
+            <a href="">
+             <img class="img-fluid" src="img/1.png" alt="">
+            </a>
 
+            <a href="">
+                <img class="img-fluid" src="img/2.png" alt="">
+            </a>
+
+            <a href="">
+               <img class="img-fluid" src="img/3.png" alt="">
+            </a>
+        </div>
+      </div>
       </div>
     </div>
   </footer>

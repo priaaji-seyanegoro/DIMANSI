@@ -14,12 +14,14 @@
                 <div class="panel">
                 <div class="panel-heading">
                     <h3 class="panel-title">Data Siswa</h3>
+                    @if(auth()->user()->role == 'admin')
                     <div class="right">
                         <button type="button" class="btn"  data-toggle="modal" data-target="#exampleModal">
                       Tambahkan Data Siswa
                     </button>
                         <button type="button" class="btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-cross"></i></button>
                     </div>
+                    @endif
                 </div>
                 <div class="panel-body">
                     <table class="table table-hover">

@@ -22,17 +22,16 @@ class AuthController extends Controller
     }
     public function updatePassword(Request $request){
        $this->validate($request,[
-            'oldpassword'=>'required',
+            'old_password'=>'required',
             'password'=>'required|confirmed'
        ]);
 
        $hashedPassword = Auth::user()->password;
-       if(Hash::check($request->oldpassword,$hashedPassword)){
+       if(Hash::check($request->old_password,$hashedPassword)){
             $user = User::find(Auth::id());
             $user->password = Hash::make($request->password);
             $user->save();
-            Auth::logout();
-            return redirect()->route('auth.gantipassword')->with('succesMsg',"Password is changed Succesfully");
+            return redirect()->back()->with('succesMsg',"Password is changed Succesfully");
         }else
         return redirect()->back()->with('errorMsg',"current password is invalid");
        }

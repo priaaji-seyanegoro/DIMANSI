@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Siswa;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,9 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $siswa = \App\siswa::all();
         $kontens = DB::table('kontens')->paginate(8);
-        return view('home',compact('kontens'));
+        return view('home',compact('kontens'),['siswa'=> $siswa]);
     }
 }

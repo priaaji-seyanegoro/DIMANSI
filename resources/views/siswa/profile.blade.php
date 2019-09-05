@@ -64,11 +64,14 @@
 		<!-- END LEFT COLUMN -->
 
 		<!-- RIGHT COLUMN -->
+
 		<div class="profile-right">
+			@if(auth()->user()->role == 'admin')
 			<h4 class="heading"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   				Input Nilai
 				</button>
 			</h4>
+			@endif
 
 			<!-- AWARDS -->
 			
