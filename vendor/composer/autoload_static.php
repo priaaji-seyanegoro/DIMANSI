@@ -879,6 +879,7 @@ class ComposerStaticInit72046d388a66822a073d997678c3cda2
         'SiswaTable' => __DIR__ . '/../..' . '/database/migrations/2019_08_02_074448_siswa_table.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'UjianTable' => __DIR__ . '/../..' . '/database/migrations/2019_09_25_032335_ujian_table.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

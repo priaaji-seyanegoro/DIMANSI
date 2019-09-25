@@ -56,6 +56,10 @@ Route::group(['middleware'=>'auth','checkRole:admin'],function(){
 
 	//konten
 	Route::resource('konten','KontenController');
+	//Kuis
+	Route::get('/kuis','KuisController@index');
+	Route::post('/kuis/create','KuisController@create');
+	Route::get('/show/{ujian}','KuisController@show');
 
 });
 
@@ -68,6 +72,7 @@ Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru'],function(){
 	Route::get('/profilesiswa', 'ProfileController@profilesiswa');
 	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa');
 	Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
+	// Route::get('/ujian','SiswaController@ujian');
 	//guru
 	Route::get('/myprofile', 'ProfileController@profileguru');
 	Route::get('/guru/{guru}','ProfileController@editguru');
@@ -76,6 +81,8 @@ Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru'],function(){
 	//paswword
 	Route::get('/changePassword','Auth\AuthController@change')->name('change');
 	Route::put('/changePassword','Auth\AuthController@updatePassword')->name('password.update');
+	//kuis
+	Route::resource('dashboard', 'dashboardController');
 
 });
 

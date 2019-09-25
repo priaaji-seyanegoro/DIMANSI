@@ -43,6 +43,29 @@
     <div class="main">
         <div class="main-content">
             <div class="row">
+              @if(auth()->user()->role == 'siswa')
+            <div class="col-md-3">
+                  <div class="metric">
+                    <span class="icon"><i class="lnr lnr-graduation-hat"></i></span>
+                    <a href="/kuis"><p>
+                      <span class="number">{{$ujian->count()}}</span>
+                      <span class="title">Kuis</span>
+                    </p>
+                  </a>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="metric">
+                    <span class="icon"><i class="lnr lnr-film-play"></i></span>
+                    <a href=""><p>
+                      <span class="number">{{$kontens->count()}}</span>
+                      <span class="title">Games</span>
+                    </p>
+                  </a>
+                  </div>
+                </div>
+              @endif
+            @if(auth()->user()->role == 'admin')
               <div class="col-md-3">
                   <div class="metric">
                     <span class="icon"><i class="fa fa-eye"></i></span>
@@ -52,6 +75,18 @@
                     </p>
                   </div>
                 </div>
+                @endif
+                 @if(auth()->user()->role == 'guru')
+              <div class="col-md-3">
+                  <div class="metric">
+                    <span class="icon"><i class="fa fa-eye"></i></span>
+                    <p>
+                      <span class="number">{{$siswa->count()}}</span>
+                      <span class="title">Jumlah Siswa</span>
+                    </p>
+                  </div>
+                </div>
+                @endif
                 <div class="col-md-12">
                     <div class="row my-4 justify-content-center">
                         @foreach($kontens as $post)

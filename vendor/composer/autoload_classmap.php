@@ -555,4 +555,5 @@ return array(
     'SiswaTable' => $baseDir . '/database/migrations/2019_08_02_074448_siswa_table.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TypeError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+    'UjianTable' => $baseDir . '/database/migrations/2019_09_25_032335_ujian_table.php',
 );

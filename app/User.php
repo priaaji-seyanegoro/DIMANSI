@@ -37,4 +37,8 @@ class User extends Authenticatable
     public function mapel(){
         return $this ->belongsToMany(Mapel::class)->withPivot(['nilai'])->withTimeStamps();
     }
+    public function lembar()
+    {
+        return $this->belongsToMany(Lembar::class);
+    }
 }

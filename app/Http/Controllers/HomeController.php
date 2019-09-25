@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Siswa;
+use App\ujian;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {   
         $siswa = \App\siswa::all();
+        $ujian = \App\ujian::all();
         $kontens = DB::table('kontens')->paginate(8);
-        return view('home',compact('kontens'),['siswa'=> $siswa]);
+        return view('home',compact('kontens'),['siswa'=> $siswa ,'ujian'=>$ujian]);
     }
 }

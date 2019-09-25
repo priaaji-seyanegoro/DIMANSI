@@ -83,4 +83,9 @@ class SiswaController extends Controller
      $matapel = \App\mapel::all();
     return view('siswa.nilai',['siswa'=> $siswa, 'matapel'=>$matapel]);
   }
+  // public function ujian(request $request){
+  //   $lembar = \App\Lembar::all();
+
+  // return view('siswa.ujian',['lembar'=> $lembar]);
+  
 }
