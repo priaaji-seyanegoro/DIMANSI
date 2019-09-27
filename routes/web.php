@@ -45,6 +45,19 @@ Route::get('/gameshow/{slug?}' , function($slug = null){
 	
 })->name('game.show');
 
+Route::get('/video' , function(){
+	$kontens = App\Konten::where('category_id', '=' , 2 )->get();
+	
+	return view ('siswa.video',compact('kontens'));
+})->name('siswa.video');
+
+Route::get('/videoshow/{slug?}' , function($slug = null){
+	$konten = App\Konten::where('slug', '=' , $slug )->first();
+	// dd($konten);
+	return view('siswa.videoshow',compact('konten'));
+	
+})->name('video.show');
+
 Auth::routes();
 //	Controller admin
 Route::group(['middleware'=>'auth','checkRole:admin'],function(){
@@ -73,7 +86,6 @@ Route::group(['middleware'=>'auth','checkRole:admin'],function(){
 	Route::get('/kuis','KuisController@index');
 	Route::post('/kuis/create','KuisController@create');
 	Route::get('/show/{ujian}','KuisController@show');
-
 });
 
 
