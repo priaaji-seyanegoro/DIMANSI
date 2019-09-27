@@ -194,9 +194,9 @@
       <!-- About Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">DIMANSI merupakan singkatan dari Dunia Imajinasi Anak Masa Kini, kami adalah website pembelajaran bagi anak - anak agar dapat mengembangkan pengetahuan berfikir dan imajinasi anak</div>
+          <p class="lead">DIMANSI merupakan singkatan dari Dunia Imajinasi Anak Masa Kini, kami adalah website pembelajaran bagi anak - anak agar dapat mengembangkan pengetahuan berfikir dan imajinasi anak.</div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">Dengan metode pembelajaran yang menarik dan menyenangkan bagi anak Dimansi hadir untuk terus mengembangkan potensi dalam diri anak agar bisa diaplikasikan di lingkungan terutama keluarga </p>
+          <p class="lead">Dengan metode pembelajaran yang menarik dan menyenangkan bagi anak. Dimansi hadir untuk terus mengembangkan potensi dalam diri anak, agar bisa diaplikasikan di lingkungan, terutama keluarga. </p>
         </div>
       </div>
 

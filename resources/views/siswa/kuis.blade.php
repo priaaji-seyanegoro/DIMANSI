@@ -47,7 +47,7 @@
 										<td>{{$dat->kode_kuis}}</td>
 										<td>{{$dat->nama_kuis}}</td>
 										 @if(auth()->user()->role == 'siswa' || auth()->user()->role == 'admin')
-										<td><a href="/show/{{$dat->id}}" class="btn btn-secondary btn-sm">Ambil Kuis</a></td>
+										<td><a href="/show/{{$dat->id}}" class="btn btn-primary btn-sm">Ambil Kuis</a></td>
 										 @endif
 									</tr>
 									@php
