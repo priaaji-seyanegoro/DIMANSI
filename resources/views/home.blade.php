@@ -48,8 +48,8 @@
                   <div class="metric">
                     <span class="icon"><i class="lnr lnr-graduation-hat"></i></span>
                     <a href="/kuis"><p>
-                      <span class="number">{{$ujian->count()}}</span>
-                      <span class="title">Kuis</span>
+                      <span class="number">Kuis</span>
+                      <span class="title"><br></span>
                     </p>
                   </a>
                   </div>
@@ -57,9 +57,9 @@
                 <div class="col-md-3">
                   <div class="metric">
                     <span class="icon"><i class="lnr lnr-film-play"></i></span>
-                    <a href=""><p>
-                      <span class="number">{{$kontens->count()}}</span>
-                      <span class="title">Games</span>
+                    <a href="{{route('siswa.game')}}"><p>
+                      <span class="number">Games</span>
+                      <span class="title"><br></span>
                     </p>
                   </a>
                   </div>
@@ -75,6 +75,7 @@
                     </p>
                   </div>
                 </div>
+                
                 @endif
                  @if(auth()->user()->role == 'guru')
               <div class="col-md-3">

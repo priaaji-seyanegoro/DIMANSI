@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 	if(Auth::user()){
-		$kontens = DB::table('kontens')->paginate(8);
+		$kontens = DB::table('kontens')->paginate(8);	
 		return view('home',compact('kontens'));
 	}
     return view('welcome');
@@ -31,6 +31,19 @@ Route::get('/cobashow/{slug?}' , function($slug = null){
 	return view('cobashow',compact('konten'));
 	
 })->name('coba.show');
+
+Route::get('/games' , function(){
+	$kontens = App\Konten::where('category_id', '=' , 3 )->get();
+	
+	return view ('siswa.game',compact('kontens'));
+})->name('siswa.game');
+
+Route::get('/gameshow/{slug?}' , function($slug = null){
+	$konten = App\Konten::where('slug', '=' , $slug )->first();
+	// dd($konten);
+	return view('siswa.gameshow',compact('konten'));
+	
+})->name('game.show');
 
 Auth::routes();
 //	Controller admin
