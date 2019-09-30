@@ -9,7 +9,7 @@
 
       h3{
         text-align: center;
-        font-family: "superfont", "arial";
+        font-family: "superfont", "calibri";
         font-size: 25px;
 
       }
@@ -21,10 +21,10 @@
       }
 
       a:hover{
-        color: blueviolet;
+        color: purple;
         text-decoration: none;
       }
-
+      
       .card{
         max-height: auto;
         min-height: 100px;
@@ -45,20 +45,30 @@
             <div class="row">
               @if(auth()->user()->role == 'siswa')
             <div class="col-md-3">
-                  <div class="metric">
+                  <div class="metric2">
                     <span class="icon"><i class="lnr lnr-graduation-hat"></i></span>
                     <a href="/kuis"><p>
-                      <span class="number">Kuis</span>
+                      <span class="number" >Kuis</span>
+                      <span class="title"><br></span>
+                    </p>
+                  </a>
+                  </div>
+                </div>
+                <div class="col-md-3" >
+                  <div class="metric">
+                    <span class="icon" ><i class="fa fa-puzzle-piece"></i></span>
+                    <a href="{{route('siswa.game')}}"><p>
+                      <span class="number"  >Games</span>
                       <span class="title"><br></span>
                     </p>
                   </a>
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="metric">
+                  <div class="metric3">
                     <span class="icon"><i class="lnr lnr-film-play"></i></span>
-                    <a href="{{route('siswa.game')}}"><p>
-                      <span class="number">Games</span>
+                    <a href="/video"><p>
+                      <span class="number" font-color="red">Video</span>
                       <span class="title"><br></span>
                     </p>
                   </a>
