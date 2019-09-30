@@ -12,7 +12,7 @@ use App\Konten;
 class KuisController extends Controller
 {
     public function index(Request $Request){
-    	$data = \App\Konten::all();
+    	
     	return view('siswa.video',['data'=>$data]);
     }
    

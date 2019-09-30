@@ -125,7 +125,6 @@
                                     <ul class="nav">
                                         <li><a href="{{route('category.index')}}" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
                                         <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
-                                        <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Games</span></a></li>
                                     </ul>
                                 </div>
                             </li>

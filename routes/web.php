@@ -36,29 +36,40 @@ Route::get('/cobashow/{slug?}' , function($slug = null){
 })->name('coba.show');
 
 Route::get('/games' , function(){
+	if(Auth::user()){
 	$kontens = App\Konten::where('category_id', '=' , 3 )->get();
 	
 	return view ('siswa.game',compact('kontens'));
+	}
+	return view('welcome');
 })->name('siswa.game');
 
 Route::get('/gameshow/{slug?}' , function($slug = null){
+	if(Auth::user()){
 	$konten = App\Konten::where('slug', '=' , $slug )->first();
 	// dd($konten);
 	return view('siswa.gameshow',compact('konten'));
+}
+	return view('welcome');
 	
 })->name('game.show');
 
 Route::get('/video' , function(){
+if(Auth::user()){
 	$kontens = App\Konten::where('category_id', '=' , 2 )->get();
 	
 	return view ('siswa.video',compact('kontens'));
+}
+	return view ('welcome');
 })->name('siswa.video');
 
 Route::get('/videoshow/{slug?}' , function($slug = null){
+	if(Auth::user()){
 	$konten = App\Konten::where('slug', '=' , $slug )->first();
 	// dd($konten);
 	return view('siswa.videoshow',compact('konten'));
-	
+}
+	return view('welcome');	
 })->name('video.show');
 
 Auth::routes();

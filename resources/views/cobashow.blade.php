@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg btn-block" href="#" role="button">
+                    <a class="btn btn-primary btn-lg btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLSfsixd0lF5_uKXH-FdZT4gFxshRGXRyFFrOP0ZXgAWMb5_umw/viewform?usp=sf_link" role="button">
                         DAFTAR SEKARANG!
                     </a>
                 </p>

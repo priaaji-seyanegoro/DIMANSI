@@ -1,4 +1,4 @@
-@extends('navbar')
+@extends('layouts.nav')
 
 @section('css')
 <style media="screen">
@@ -39,7 +39,7 @@
 </style>
 @endsection
 <br><br><br><br>
-@section('content')
+@section('isi')
 <div class="main">
   <div class="main-content">
       <div class="row">
