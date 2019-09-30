@@ -50,7 +50,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
           </li>
            <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3" href="">Daftar</a>
+            <a class="nav-link py-3 px-0 px-lg-3" href="https://docs.google.com/forms/d/e/1FAIpQLSfsixd0lF5_uKXH-FdZT4gFxshRGXRyFFrOP0ZXgAWMb5_umw/viewform?usp=sf_link">Daftar</a>
           </li>
            <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#masuk">Masuk</a>

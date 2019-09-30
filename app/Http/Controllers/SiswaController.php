@@ -12,7 +12,7 @@ class SiswaController extends Controller
 {
     public function index (request $request){
 
-    	$data_siswa = \App\siswa::all();
+    	$data_siswa = \App\siswa::paginate(2);
     	return view('siswa.siswa',['data_siswa'=>$data_siswa]);
     }
     public function create(Request $request)
@@ -32,6 +32,9 @@ class SiswaController extends Controller
       	$user->password = bcrypt('rahasia');
       	$user->remember_token = str_random(60);
       	$user->save();
+
+      $siswa->mapel()->attach($request->mapel,['nilai'=>$request->nilai]);
+
 
       $request->request->add(['user_id'=> $user->id ]);
     	$siswa = \App\siswa::create($request->all());
@@ -83,9 +86,4 @@ class SiswaController extends Controller
      $matapel = \App\mapel::all();
     return view('siswa.nilai',['siswa'=> $siswa, 'matapel'=>$matapel]);
   }
-  // public function ujian(request $request){
-  //   $lembar = \App\Lembar::all();
-
-  // return view('siswa.ujian',['lembar'=> $lembar]);
-  
 }

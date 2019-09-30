@@ -35,7 +35,8 @@ class Siswa extends Model
         $total += $mapel->pivot->nilai;
         $hitung ++;
       }
-      return round($total/$hitung);
+     
+      return round( $rata = ($hitung!=0)?($total/$hitung) * 1:0);
     }
     public function total(){
         return Siswa::count();

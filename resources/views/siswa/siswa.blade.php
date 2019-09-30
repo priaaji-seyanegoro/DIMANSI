@@ -59,6 +59,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                   {!! $data_siswa->render() !!}
                 </div>
             </div>
             </div>

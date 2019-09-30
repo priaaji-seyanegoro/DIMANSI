@@ -18,31 +18,55 @@
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/logo.png')}}">
+  <style>
+         @font-face {
+            font-family: "superfont";
+            src: url("{{asset('font/superfont.ttf')}}") format('truetype');
+        }
+        h1{
+            /* font-family: "superfont", "arial"; */
+            color : black;
+            font-weight : bold;
+        }
+        .iframe-container{
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        .iframe-container iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+      </style>
 
   @yield('css')
 </head> 
 <body id="page-top">
+    <div class="container justify-content-center">
+            <br><br>
+                <div class="row justify-content-center align-items-center">
+                    <div class="content">
+                        <div class="col-md-12">
+                              
+                        
+                        <div class="col-md-12">
+                            <br>
+                            <div class="iframe-container">
+                                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsixd0lF5_uKXH-FdZT4gFxshRGXRyFFrOP0ZXgAWMb5_umw/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                            </div>
+                          
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+  
+          
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="/">DIMANSI</a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3" href="">Daftar</a>
-          </li>
-         
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  @yield('content')
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

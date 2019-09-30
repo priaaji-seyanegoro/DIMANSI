@@ -11,7 +11,7 @@ use App\Siswa;
 class GuruController extends Controller
 {
      public function index (request $request){
-    	$data_guru = \App\guru::all();
+    	$data_guru = \App\guru::paginate(1);
     	return view('guru.guru',['data_guru'=>$data_guru]);
     }
      public function create(Request $request)

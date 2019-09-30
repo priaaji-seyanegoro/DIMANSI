@@ -18,6 +18,9 @@ Route::get('/', function () {
 	}
     return view('welcome');
 });
+Route::get('/daftar',function(){
+	return view('navbar');
+});
 
 Route::get('/cobakonten' , function(){
 	$kontens = App\Konten::where('category_id', '=' , 4 )->get();

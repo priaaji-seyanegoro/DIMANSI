@@ -28,7 +28,7 @@ class HomeController extends Controller
     {   
         $siswa = \App\siswa::all();
         $ujian = \App\ujian::all();
-        $kontens = DB::table('kontens')->paginate(8);
+        $kontens = DB::table('kontens')->paginate(2);
         return view('home',compact('kontens'),['siswa'=> $siswa ,'ujian'=>$ujian]);
     }
 }

@@ -112,10 +112,11 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
-                <div class="paginate text-center">
+                     <div class="paginate text-center">
                     {{ $kontens->links() }}
                 </div>
+                </div>
+                
             </div>
         </div>
     </div>

@@ -46,6 +46,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                     {!! $data_guru->render() !!}
                 </div>
             </div>
             </div>

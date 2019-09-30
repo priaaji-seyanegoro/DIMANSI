@@ -66,7 +66,7 @@
 		<!-- RIGHT COLUMN -->
 
 		<div class="profile-right">
-			@if(auth()->user()->role == 'admin')
+			@if(auth()->user()->role == 'admin' || auth()->user()->role == 'guru')
 			<h4 class="heading"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   				Input Nilai
 				</button>
@@ -145,7 +145,7 @@
   				</div>
       		<div class="form-group {{$errors->has('nilai') ? 'has-error' : ' '}}">
         				<label for="exampleInputEmail1">Nilai</label>
-        				<input name="nilai" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nilai">
+        				<input name="nilai" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nilai" value="0">
         				@if($errors -> has('nilai'))
           				<span class="help-block">{{$errors->first('nilai')}}</span>
         				@endif
