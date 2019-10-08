@@ -24,7 +24,7 @@
     @yield('header')
 </head>
 
-@if(auth()->user()->role == 'siswa')
+@if(auth()->user()->role == 'siswa' || auth()->user()->role == 'murid')
 <body class="layout-fullwidth" >
      <div id="wrapper">
         <!-- NAVBAR -->
@@ -39,11 +39,11 @@
                         <li><a href="/home"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
                         
                         <li class="dropdown">
-                            @if(auth()->user()->role == 'siswa')
+                            @if(auth()->user()->role == 'siswa'|| auth()->user()->role == 'murid')
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{auth()->user()->siswa->getAvatar()}}" class="img-circle" alt="Avatar"><span>{{strtoupper(auth()->user()->name)}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             @endif
                             <ul class="dropdown-menu">
-                                @if(auth()->user()->role == 'siswa')
+                                @if(auth()->user()->role == 'siswa' || auth()->user()->role == 'murid')
                                 <li><a href="/profilesiswa"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
                                 @endif
                                 <li><a href="{{Route('change')}}"><i class="lnr lnr-cog"></i> <span>Setting</span></a></li>

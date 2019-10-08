@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
 	if(Auth::user()){
 		$kontens = DB::table('kontens')->paginate(8);	
@@ -73,6 +74,7 @@ Route::get('/videoshow/{slug?}' , function($slug = null){
 })->name('video.show');
 
 Auth::routes();
+
 //	Controller admin
 Route::group(['middleware'=>'auth','checkRole:admin'],function(){
 	Route::get('/siswa', 'SiswaController@index');
@@ -100,19 +102,20 @@ Route::group(['middleware'=>'auth','checkRole:admin'],function(){
 	Route::get('/kuis','KuisController@index');
 	Route::post('/kuis/create','KuisController@create');
 	Route::get('/show/{ujian}','KuisController@show');
+	Route::get('/kuis/{ujian}/delete','KuisController@delete');
 });
 
 
 //Controller admin,siswa,guru
-Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru'],function(){
+Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru,murid'],function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	//siswa
 	Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
-	Route::get('/profilesiswa', 'ProfileController@profilesiswa');
-	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa');
+	Route::get('/profilesiswa', 'ProfileController@profilesiswa')->middleware();
+	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa')->middleware();
 	Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
-	// Route::get('/ujian','SiswaController@ujian');
-	//guru
+
+	// Guru
 	Route::get('/myprofile', 'ProfileController@profileguru');
 	Route::get('/guru/{guru}','ProfileController@editguru');
 	Route::post('/updateguru/{guru}','ProfileController@updateguru');
@@ -120,8 +123,6 @@ Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru'],function(){
 	//paswword
 	Route::get('/changePassword','Auth\AuthController@change')->name('change');
 	Route::put('/changePassword','Auth\AuthController@updatePassword')->name('password.update');
-	//kuis
-	Route::resource('dashboard', 'dashboardController');
 
 });
 

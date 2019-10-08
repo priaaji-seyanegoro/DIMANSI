@@ -21,4 +21,8 @@ class KuisController extends Controller
     public function show(ujian $ujian){
         return view('siswa.showkuis',['ujian' => $ujian ]);
     }
+    public function delete(ujian $ujian){
+        $ujian-> delete($ujian);
+        return redirect('/kuis')->with('sukses','Data Berhasil dihapus');
+    }
 }

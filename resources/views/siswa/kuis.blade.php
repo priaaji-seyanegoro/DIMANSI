@@ -35,6 +35,9 @@
 										 @if(auth()->user()->role == 'siswa' || auth()->user()->role == 'admin')
 										<th>Ambil</th>
 										 @endif
+										 @if(auth()->user()->role == 'admin')
+										<th>Aksi</th>
+										 @endif
 									</tr>
 								</thead>
 								<tbody>
@@ -48,6 +51,9 @@
 										<td>{{$dat->nama_kuis}}</td>
 										 @if(auth()->user()->role == 'siswa' || auth()->user()->role == 'admin')
 										<td><a href="/show/{{$dat->id}}" class="btn btn-primary btn-sm">Ambil Kuis</a></td>
+										 @endif
+										 @if(auth()->user()->role == 'admin')
+										<td><a href="/kuis/{{$dat->id}}/delete" class="btn btn-danger btn-sm">Hapus</a></td>
 										 @endif
 									</tr>
 									@php

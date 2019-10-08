@@ -99,9 +99,28 @@
           <span class="help-block">{{$errors->first('email')}}</span>
         @endif
       </div>
+       <div class="form-group {{$errors->has('tanggal_lahir') ? 'has-error' : ' '}}">
+        <label for="nomer">Tanggal lahir</label>
+        <input name="nomer" type="text" class="form-control" id="tanggal_lahir" aria-describedby="emailHelp" placeholder="Tanggal lahir">
+        @if($errors -> has('tanggal_lahir'))
+        <span class="help-block">{{$errors->first('tanggal_lahir')}}</span>
+        @endif
+      </div>
+       <div class="form-group {{$errors->has('role') ? 'has-error' : ' '}}">
+        <label for="exampleFormControlSelect1">Role</label>
+        <select name="role" class="form-control" id="exampleFormControlSelect1">
+          <option selected>Pilih Role</option>
+            <option value="siswa">Siswa</option>
+            <option value="murid">Murid</option>
+        </select>
+        @if($errors -> has('role'))
+          <span class="help-block">{{$errors->first('role')}}</span>
+        @endif
+        </div>
       <div class="form-group {{$errors->has('jenis_kelamin') ? 'has-error' : ' '}}">
         <label for="exampleFormControlSelect1">Pilih Jenis Kelamin</label>
         <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
+        <option selected>Pilih Jenis Kelamin</option>
         <option value="Laki-laki">Laki-laki</option>
         <option value="Perempuan">Perempuan</option>
         </select>

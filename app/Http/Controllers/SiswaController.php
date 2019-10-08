@@ -23,17 +23,18 @@ class SiswaController extends Controller
         'jenis_kelamin'=>'required',
         'nomer'=>'required|numeric|min:8',
         'alamat'=>'required',
+        'tanggal_lahir'=>'required|min:10',
 
       ]);
     	$user = new\App\User;
-      	$user->role ='siswa';
+      	$user->role = $request->role;
       	$user->name = $request->nama_depan;
       	$user->email = $request->email;
       	$user->password = bcrypt('rahasia');
       	$user->remember_token = str_random(60);
       	$user->save();
 
-      $siswa->mapel()->attach($request->mapel,['nilai'=>$request->nilai]);
+       
 
 
       $request->request->add(['user_id'=> $user->id ]);

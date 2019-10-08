@@ -43,7 +43,7 @@
 						<li>Jenis Kelamin<span>{{auth()->user()->guru->jenis_kelamin}}</span></li>
 						<li>No Handphone<span>{{auth()->user()->guru->nomer}}</span></li>
 						<li>Alamat<span>{{auth()->user()->guru->alamat}}</span></li>
-						<li>Tanggal Lahir <span></a></span></li>
+						<li>Tanggal Lahir <span>{{auth()->user()->guru->tanggal_lahir}}</span></li>
 					</ul>
 				</div>
 				<div class="text-center"><a href="/guru/{{auth()->user()->guru->id}}" class="btn btn-warning">Edit Profile</a></div>

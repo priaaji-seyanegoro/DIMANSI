@@ -53,6 +53,7 @@
                                     <label for="exampleFormControlTextarea1" value="{{$guru->Alamat}}">Alamat</label>
                                     <textarea name ="alamat"class="form-control" id="exampleFormControlTextarea1" rows="3"> {{$guru->alamat}}</textarea>
                                   </div>
+                    
                                   <div class="form-group col-md-12 {{$errors->has('avatar') ? 'has-error' : ' '}}">
                                   <label for="exampleFormControlTextarea1">Avatar</label>
                                   <input type="file" name="avatar" class="form-control">

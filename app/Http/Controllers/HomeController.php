@@ -31,4 +31,5 @@ class HomeController extends Controller
         $kontens = DB::table('kontens')->paginate(8);
         return view('home',compact('kontens'),['siswa'=> $siswa ,'ujian'=>$ujian]);
     }
+    
 }

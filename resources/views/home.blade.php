@@ -40,6 +40,7 @@
 @endsection
 
 @section('content')
+@if(auth()->user()->role == 'siswa'  || auth()->user()->role == 'admin' || auth()->user()->role == 'guru')
     <div class="main">
         <div class="main-content">
             <div class="row">
@@ -130,5 +131,34 @@
             </div>
         </div>
     </div>
+    @endif
+@if(auth()->user()->role == 'murid')
+<div class="main">
+  <div class="main-content">
+      <div class="row">
+          <div class="col-md-3">
+                  <div class="metric3">
+                    <span class="icon"><i class="lnr lnr-film-play"></i></span>
+                    <a href="/video"><p>
+                      <span class="number" font-color="red">Video</span>
+                      <span class="title"><br></span>
+                    </p>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+ <div class="jumbotron">
+                <h1 class="display-4">HELLO, SOBAT DIMANSI</h1>
+                <p class="lead">Selamat datang, selamat belajar. Untuk mulai pelajaran klik link video di atas ya.</p>
+                <p>Belajar dapat membuatmu semakin dekat dengan cita-citamu, semangat belajar adik-adik.</p>
+                <hr class="my-4">
+               <div class="row justify-content-center align-items-center">
+
+               </div>
+                  
+</div>
+@endif
 @endsection
 

@@ -40,7 +40,7 @@
 						<li>Jenis Kelamin<span>{{auth()->user()->siswa->jenis_kelamin}}</span></li>
 						<li>No Handphone<span>{{auth()->user()->siswa->nomer}}</span></li>
 						<li>Alamat<span>{{auth()->user()->siswa->alamat}}</span></li>
-						<li>Tanggal Lahir <span></a></span></li>
+						<li>Tanggal Lahir <span>{{auth()->user()->siswa->tanggal_lahir}}</span></li>
 					</ul>
 				</div>
 				<div class="text-center"><a href="/editsiswa/{{auth()->user()->siswa->id}}" class="btn btn-warning">Edit Profile</a></div>

@@ -29,6 +29,13 @@
                                       <input name ="nama_belakang"type="text" class="form-control" id="Nama_Belakang" placeholder="Nama Belakang" value="{{$guru->nama_belakang}}">
                                     </div>
                                   </div>
+                                  <div class="form-group col-md-12 {{$errors->has('tanggal_lahir') ? 'has-error' : ' '}}">
+                                      <label for="tanggal_lahir ">Tanggal lahir</label>
+                                      <input name="tanggal_lahir" type="text" class="form-control" id="tanggal_lahir" aria-describedby="emailHelp" placeholder="Tanggal lahir" value="{{$guru->tanggal_lahir}}">
+                                      @if($errors -> has('tanggal_lahir'))
+                                      <span class="help-block">{{$errors->first('tanggal_lahir')}}</span>
+                                      @endif
+                                    </div>
                                   <div class="form-group col-md-12">
                                     <label for="exampleFormControlSelect">Jenis Kelamin</label>
                                      <select name ="jenis_kelamin" class="form-control custom-select">
