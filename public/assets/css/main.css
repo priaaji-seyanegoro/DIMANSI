@@ -713,7 +713,7 @@ fieldset[disabled] .btn {
     border-radius: 3px;
     padding: 20px;
     margin-bottom: 30px;
-    border: 1px solid red; }
+    background-color:red;}
     .metric .icon {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
@@ -725,7 +725,7 @@ fieldset[disabled] .btn {
       background-color:red;
       text-align: center; }
       .metric .icon i {
-        font-size: 18px;
+        font-size: 30px;
         color: whitesmoke; }
     .metric p {
       margin-bottom: 0;
@@ -734,7 +734,8 @@ fieldset[disabled] .btn {
     .metric .number {
       display: block;
       font-size: 28px;
-      font-weight: 300; }
+      font-weight: 300;
+      color: whitesmoke; }
     .metric .title {
       font-size: 16px; }
     .metric2 {
@@ -743,7 +744,7 @@ fieldset[disabled] .btn {
       border-radius: 3px;
       padding: 20px;
       margin-bottom: 30px;
-      border: 1px solid #3287B2; }
+      background-color: #3287B2; }
       .metric2 .icon {
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
@@ -755,7 +756,7 @@ fieldset[disabled] .btn {
         background-color:#3287B2;
         text-align: center; }
         .metric2 .icon i {
-          font-size: 18px;
+          font-size: 30px;
           color: whitesmoke; }
       .metric2 p {
         margin-bottom: 0;
@@ -764,7 +765,8 @@ fieldset[disabled] .btn {
       .metric2 .number {
         display: block;
         font-size: 28px;
-        font-weight: 300; }
+        font-weight: 300;
+        color: whitesmoke; }
       .metric2 .title {
         font-size: 16px; }
         .metric3 {
@@ -773,7 +775,7 @@ fieldset[disabled] .btn {
           border-radius: 3px;
           padding: 20px;
           margin-bottom: 30px;
-          border: 1px solid green; }
+          background-color: green; }
           .metric3 .icon {
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
@@ -785,7 +787,7 @@ fieldset[disabled] .btn {
             background-color:green;
             text-align: center; }
             .metric3 .icon i {
-              font-size: 18px;
+              font-size: 30px;
               color: whitesmoke; }
           .metric3 p {
             margin-bottom: 0;
@@ -794,7 +796,8 @@ fieldset[disabled] .btn {
           .metric3 .number {
             display: block;
             font-size: 28px;
-            font-weight: 300; }
+            font-weight: 300;
+            color: whitesmoke; }
           .metric3 .title {
             font-size: 16px; }
 ul.activity-list > li {
